@@ -1,0 +1,129 @@
+// @import './reset';
+@import './variables';
+@import './globals';
+
+.button {
+    display: inline-block;
+    font-size: $font-size;
+    color: $gray-dark;
+    padding: 21px 45px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    line-height: normal;
+    transition: all 0.2s linear;
+
+    &__primary {
+        color: white;
+        background-color: $primary-color;
+    }
+
+    &__outline {
+        border: 1px solid;
+        color: $gray-blur;
+    }
+}
+
+.block {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 85px;
+
+    &_caption {
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+        padding: 0 10px;
+    }
+
+    &_caption:before {
+        left: 0;
+        transform: translateX(-100%) translateY(-50%);
+    }
+
+    &_caption:after {
+        right: 0;
+        transform: translateX(100%) translateY(-50%);
+    }
+
+    &_caption:before,
+    &_caption:after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 30px;
+        background-color: $primary-color;
+        top: 50%;
+    }
+
+    &_caption__left {
+        padding: 40px;
+    }
+
+    &_caption__left:after {
+        display: none;
+    }
+
+    &_caption__left:before {
+        transform: none;
+    }
+
+    &_heading {
+        text-transform: uppercase;
+        font-size: 50px;
+        line-height: 1.4;
+        span {
+            display: block;
+        }
+    }
+}
+
+.text {
+    font-weight: 300;
+    color: $gray;
+    line-height: 1.6;
+}
+
+.text__dark {
+    color: $gray-dark;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.bg {
+    &_google {
+        background-color: #FF7879;
+    }
+    
+    &_twitter {
+        background-color: #7AAFFF;
+    }
+
+    &_instagram {
+        background-color: #FFB978;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .button {
+        padding: 10px 20px;
+    }
+
+    .block {
+        margin-bottom: 50px;
+        &_heading {
+            font-size: 35px;
+        }
+
+        &_caption {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,0 +1,118 @@
+@import './../../styles/variables';
+
+.started {
+    max-width: 900px;
+    margin: 200px auto 70px;
+    border-radius: 30px;
+    background-color: #fbfbfb;
+    position: relative;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    *:not(img) {
+        position: relative;
+        z-index: 100;
+    }
+
+    &_heading {
+        margin-bottom: 30px;
+    }
+
+    &_caption {
+        margin-bottom: 20px;
+    }
+
+    &_desc {
+        max-width: 245px;
+        margin-bottom: 50px;
+        color: $gray-dark;
+    }
+
+    &_comment {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+    }
+
+    &_smile {
+        position: absolute;
+        top: 0;
+        right: 0;
+        // transform: translate(50%, -50%);
+    }
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+
+    &_heading {
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    &_link {
+        color: $gray-dark;
+        display: inline-block;
+        font-size: 14px;
+        padding-left: 0;
+    }
+
+    &_link_item {
+        margin-bottom: 25px;
+    }
+
+    &_desc {
+        margin: 40px 0 50px;
+        max-width: 250px;
+    }
+}
+
+.social {
+    display: inline-flex;
+
+    &_link {
+        width: 40px;
+        height: 40px;
+        border-radius: 100rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        color: white;
+    }
+
+    &_link:not(:first-child) {
+        margin-left: 15px;
+    }
+
+    &_link + &_link {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .started_smile {
+        transform: translate(50%, -50%);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .started {
+        margin-top: 40px;
+    }
+
+    .started_comment, .started_smile {
+        max-width: 20%;
+    }
+
+    .footer {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 20px;
+    }
+}

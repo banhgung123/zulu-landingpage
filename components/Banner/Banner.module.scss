@@ -1,0 +1,83 @@
+@import './../../styles/variables';
+
+.banner {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+
+    &_info {
+        width: 35%;
+    }
+
+    &_image {
+        width: 60%;
+        transform: translateX(50px);
+    }
+
+    &_heading {
+        font-size: 55px;
+        line-height: 1.4;
+        margin-bottom: 40px;
+    }
+
+    &_heading span {
+        display: block;
+    }
+
+    &_desc {
+        margin-bottom: 50px;
+    }
+
+    &_links {
+        a:first-child {
+            margin-right: 40px;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+
+    @media screen and (max-width: 1279px) {
+        &_heading {
+            font-size: 45px;
+            margin-bottom: 30px;
+        }
+
+        &-desc {
+            margin-bottom: 30px;
+        }
+
+        &_links {
+            a {
+                padding: 15px 20px;
+            }
+
+            a:first-child {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        flex-direction: column;
+
+        & > * {
+            width: 100%;
+        }
+
+        &_image {
+            transform: none;
+            margin-top: 25px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-top: 30px;
+
+        &_heading {
+            margin-bottom: 15px;
+            span {
+                display: unset;
+            }
+        }
+    }
+}
