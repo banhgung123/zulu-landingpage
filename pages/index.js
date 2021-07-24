@@ -2,13 +2,6 @@
 // import styles from "../styles/Home.module.scss";
 import Wrapper from "../components/Wrapper";
 import Container from "../components/Container";
-import Header from "../components/Header";
-import Banner from "../components/Banner";
-import Work from "../components/Work";
-import Intro from "../components/Intro";
-import Plan from "../components/Plan";
-import Client from "../components/Client";
-import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -71,15 +64,7 @@ export default function Home() {
     //   </footer>
     // </div>
     <Wrapper>
-      <Container>
-        <Header />
-        <Banner />
-        <Work />
-        <Intro />
-        <Plan />
-        <Client />
-        <Footer />
-      </Container>
+      <Container />
     </Wrapper>
   );
 }
