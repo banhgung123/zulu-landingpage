@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function Header({ toggle, toggleMenu }) {
-    const changeToggle = () => {
-        if (toggleMenu) toggleMenu(true);
+    const changeToggle = (value) => {
+        if (toggleMenu) toggleMenu(value);
     }
 
     return (
@@ -15,6 +15,7 @@ function Header({ toggle, toggleMenu }) {
                     <img src="images/logo.png" alt="" className={styles.header_logo_image} />
                 </a>
                 <ul className={`${toggle ? `${styles.header_menu_is_active}` : ''} ${styles.header_menu}`}>
+                    {toggle && <FontAwesomeIcon icon={faTimes} className={styles.header_menu_toggle} onClick={() => changeToggle(false)} />}
                     <li className={styles.header_menu_item}>
                         <a href="#" className={styles.header_menu_link}>Home</a>
                     </li>
@@ -27,12 +28,12 @@ function Header({ toggle, toggleMenu }) {
                     <li className={styles.header_menu_item}>
                         <a href="#" className={styles.header_menu_link}>About</a>    
                     </li>
-                    </ul>
+                </ul>
                 <div className={styles.header_auth}>
                     <a href="#" className="button">Login</a>
                     <a href="#" className="button button__primary">Sign Up</a>
                 </div>
-                <FontAwesomeIcon icon={faBars} className={styles.header_menu_toggle} onClick={changeToggle} />
+                <FontAwesomeIcon icon={faBars} className={styles.header_menu_toggle} onClick={() => changeToggle(true)} />
             </header>
         </>
     );
